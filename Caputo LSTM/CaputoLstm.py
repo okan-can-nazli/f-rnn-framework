@@ -206,7 +206,7 @@ class LSTMCell:
             do_input = do * fractional_derivs['output_gate'][t]
             di_input = di * fractional_derivs['input_gate'][t]
             df_input = df * fractional_derivs['forget_gate'][t]
-            dc_input = dc * fractional_derivs['candidate'][t]
+            dc_input = dc * fractional_derivs['candidate_gate'][t]
             
             # Weight gradients
             accumulated_grads['dWo'] += np.dot(do_input, combined_input.T)
